@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Personagem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-button-container">
+            <a href="Katanas.html">
+                <button>Katanas</button>
+            </a>
+            <a href="Elementos.html">
+                <button>Elementos</button>
+            </a>
+            <a href="Habilidades.html">
+                <button>Habilidades</button>
+            </a>
+            <a href="Mochila.html">
+                <button>Mochila</button>
+            </a>
+        </div>
+        <h1>Ficha de Personagem</h1>
+        <div class="info">
+            <div>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" value="Arthur Pendragon">
+            </div>
+            <div>
+                <label for="race">Raça:</label>
+                <select id="race">
+                    <option value="Humano">Humano</option>
+                    <option value="Elfo">Elfo</option>
+                    <option value="Anão">Anão</option>
+                    <option value="Orc">Orc</option>
+                    <option value="Goblin">Goblin</option>
+                    <option value="Feral">Feral</option>
+                    <option value="Golem">Golem</option>
+                    <option value="Insectoide">Insectoide</option>
+                    <option value="Ciclopes">Ciclopes</option>
+                    <option value="Tritão">Tritão</option>
+                </select>
+            </div>
+            <div>
+                <label for="origin">Origem:</label>
+                <select id="origin">
+                    <option value="Cavaleiro">Cavaleiro</option>
+                    <option value="Mago">Mago</option>
+                    <option value="Ladino">Ladino</option>
+                    <option value="Guerreiro">Guerreiro</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+            <div>
+                <label for="coins">Moedas:</label>
+                <input type="number" id="coins" value="1000">
+            </div>
+            <div>
+                <label for="level">Nível:</label>
+                <input type="number" id="level" value="1">
+            </div>
+            <div>
+                <label for="xp">XP:</label>
+                <input type="number" id="xp" value="0">
+            </div>
+        </div>
+        <div class="status">
+            <div class="status-block">
+                <h2>Status Básico</h2>
+                <div class="status-basic">
+                    <div class="attributes">
+                        <div>
+                            <label for="agility-current">Agilidade:</label>
+                            <input type="number" id="agility-current" value="10">
+                            <label for="agility-bonus">Bônus:</label>
+                            <input type="number" id="agility-bonus" value="5">
+                        </div>
+                        <div>
+                            <label for="strength-current">Força:</label>
+                            <input type="number" id="strength-current" value="10">
+                            <label for="strength-bonus">Bônus:</label>
+                            <input type="number" id="strength-bonus" value="5">
+                        </div>
+                        <div>
+                            <label for="intellect-current">Intelecto:</label>
+                            <input type="number" id="intellect-current" value="10">
+                            <label for="intellect-bonus">Bônus:</label>
+                            <input type="number" id="intellect-bonus" value="5">
+                        </div>
+                        <div>
+                            <label for="max-health">Vida:</label>
+                            <input type="number" id="max-health" value="100">
+                            <label for="current-health">Atual:</label>
+                            <input type="number" id="current-health" value="100">
+                        </div>
+                        <div>
+                            <label for="max-stamina">Estamina:</label>
+                            <input type="number" id="max-stamina" value="50">
+                            <label for="current-stamina">Atual:</label>
+                            <input type="number" id="current-stamina" value="50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="status-block">
+                <h2>Status de Sentidos</h2>
+                <div class="senses">
+                    <div class="column">
+                        <div>
+                            <label for="touch-current">Tato:</label>
+                            <input type="number" id="touch-current" value="10">
+                        </div>
+                        <div>
+                            <label for="vision-current">Visão:</label>
+                            <input type="number" id="vision-current" value="10">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div>
+                            <label for="hearing-current">Audição:</label>
+                            <input type="number" id="hearing-current" value="10">
+                        </div>
+                        <div>
+                            <label for="luck-current">SG:</label>
+                            <input type="number" id="luck-current" value="10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="status-block">
+                <h2>Status de Combate</h2>
+                <div class="combat">
+                    <div>
+                        <label for="physical-resistance-current">Resistência Física:</label>
+                        <input type="number" id="physical-resistance-current" value="10">
+                        <label for="physical-resistance-bonus">Bônus:</label>
+                        <input type="number" id="physical-resistance-bonus" value="5">
+                    </div>
+                    <div>
+                        <label for="magical-resistance-current">Resistência Mágica:</label>
+                        <input type="number" id="magical-resistance-current" value="10">
+                        <label for="magical-resistance-bonus">Bônus:</label>
+                        <input type="number" id="magical-resistance-bonus" value="5">
+                    </div>
+                    <div>
+                        <label for="physical-efficiency-current">Eficiência Física:</label>
+                        <input type="number" id="physical-efficiency-current" value="10">
+                        <label for="physical-efficiency-bonus">Bônus:</label>
+                        <input type="number" id="physical-efficiency-bonus" value="5">
+                    </div>
+                    <div>
+                        <label for="magical-efficiency-current">Eficiência Mágica:</label>
+                        <input type="number" id="magical-efficiency-current" value="10">
+                        <label for="magical-efficiency-bonus">Bônus:</label>
+                        <input type="number" id="magical-efficiency-bonus" value="5">
+                    </div>
+                    <div>
+                        <label for="speed-current">Velocidade:</label>
+                        <input type="number" id="speed-current" value="10">
+                        <label for="speed-bonus">Bônus:</label>
+                        <input type="number" id="speed-bonus" value="5">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button onclick="loadData()">Carregar Ficha</button>
+            <button onclick="saveData()">Salvar Ficha</button>
+            <button onclick="clearData()">Limpar Ficha</button>
+        </div>
+    </div>
+
+    <script>
+        // Função para salvar os dados no localStorage
+        function saveData() {
+            const fields = document.querySelectorAll('input, select');
+            fields.forEach(field => {
+                localStorage.setItem(field.id, field.value);
+            });
+        }
+
+        // Função para carregar os dados do localStorage
+        function loadData() {
+            const fields = document.querySelectorAll('input, select');
+            fields.forEach(field => {
+                if (localStorage.getItem(field.id)) {
+                    field.value = localStorage.getItem(field.id);
+                }
+            });
+        }
+
+        // Função para limpar os dados do localStorage e os campos
+        function clearData() {
+            localStorage.clear();
+            const fields = document.querySelectorAll('input, select');
+            fields.forEach(field => {
+                field.value = '';
+            });
+        }
+
+        // Carrega os dados ao iniciar a página
+        window.onload = loadData;
+
+        // Salva os dados ao sair da página
+        window.onbeforeunload = saveData;
+    </script>
+</body>
+</html>

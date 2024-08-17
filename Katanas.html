@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Katanas</title>
+    <link rel="stylesheet" href="katanas.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-button-container">
+            <a href="index.html">
+                <button>Ficha</button>
+            </a>
+            <a href="Elementos.html">
+                <button>Elementos</button>
+            </a>
+            <a href="Habilidades.html">
+                <button>Habilidades</button>
+            </a>
+            <a href="Mochila.html">
+                <button>Mochila</button>
+            </a>
+        </div>
+    
+    <div id="ficha" class="section">
+        <!-- Conteúdo da seção Ficha -->
+    </div>
+
+    <div id="habilidades" class="section">
+        <!-- Conteúdo da seção Habilidades -->
+    </div>
+
+    <div id="katanas" class="katana-container">
+        <h1>Ficha de Katanas</h1>
+        <div class="katana">
+            <div class="katana-info">
+                <input type="text" class="katana-name" value="Katana do Dragão">
+                <div class="katana-details">
+                    <select class="katana-raridade">
+                        <option value="comum">Comum</option>
+                        <option value="raro">Raro</option>
+                        <option value="epico">Épico</option>
+                        <option value="lendario">Lendário</option>
+                        <option value="mistico">Místico</option>
+                    </select>
+                    <select class="katana-minerio">
+                        <option value="ferro">Ferro</option>
+                        <option value="cobre">Cobre</option>
+                        <option value="aco">Aço</option>
+                        <option value="ouro">Ouro</option>
+                        <option value="diamante">Diamante</option>
+                        <option value="safira">Safira</option>
+                        <option value="esmeralda">Esmeralda</option>
+                        <option value="ametista">Ametista</option>
+                    </select>
+                </div>
+                <p><strong>Propriedades:</strong></p>
+                <ul>
+                    <li>
+                        Ataque: 
+                        <select class="ataque-dado">
+                            <option value="d4">d4</option>
+                            <option value="d6" selected>d6</option>
+                            <option value="d8">d8</option>
+                            <option value="d10">d10</option>
+                            <option value="d12">d12</option>
+                            <option value="d20">d20</option>
+                        </select>
+                        + 
+                        <select class="ataque-bonus">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3" selected>3</option>
+                        </select>
+                    </li>
+                    <li>
+                        Durabilidade: 
+                        <input type="number" class="durabilidade-max" value="100"> / 
+                        <input type="number" class="durabilidade-atual" value="100">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="katana">
+            <div class="katana-info">
+                <input type="text" class="katana-name" value="Katana da Tempestade">
+                <div class="katana-details">
+                    <select class="katana-raridade">
+                        <option value="comum">Comum</option>
+                        <option value="raro">Raro</option>
+                        <option value="epico">Épico</option>
+                        <option value="lendario">Lendário</option>
+                        <option value="mistico" selected>Místico</option>
+                    </select>
+                    <select class="katana-minerio">
+                        <option value="ferro">Ferro</option>
+                        <option value="cobre">Cobre</option>
+                        <option value="aco">Aço</option>
+                        <option value="ouro">Ouro</option>
+                        <option value="diamante">Diamante</option>
+                        <option value="safira">Safira</option>
+                        <option value="esmeralda">Esmeralda</option>
+                        <option value="ametista" selected>Ametista</option>
+                    </select>
+                </div>
+                <p><strong>Propriedades:</strong></p>
+                <ul>
+                    <li>
+                        Ataque: 
+                        <select class="ataque-dado">
+                            <option value="d4">d4</option>
+                            <option value="d6">d6</option>
+                            <option value="d8">d8</option>
+                            <option value="d10">d10</option>
+                            <option value="d12">d12</option>
+                            <option value="d20" selected>d20</option>
+                        </select>
+                        + 
+                        <select class="ataque-bonus">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </li>
+                    <li>
+                        Durabilidade: 
+                        <input type="number" class="durabilidade-max" value="80"> / 
+                        <input type="number" class="durabilidade-atual" value="80">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Adicione mais katanas conforme necessário -->
+    </div>
+    
+    <div id="mochila" class="section">
+        <!-- Conteúdo da seção Mochila -->
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-button" onclick="salvar()">Salvar</button>
+        <button class="action-button" onclick="carregar()">Carregar</button>
+        <button class="action-button" onclick="limpar()">Limpar</button>
+    </div>
+
+    <script>
+        function salvar() {
+            const katanas = [];
+            document.querySelectorAll('.katana').forEach((katanaDiv) => {
+                const katana = {
+                    nome: katanaDiv.querySelector('.katana-name').value,
+                    raridade: katanaDiv.querySelector('.katana-raridade').value,
+                    minerio: katanaDiv.querySelector('.katana-minerio').value,
+                    ataqueDado: katanaDiv.querySelector('.ataque-dado').value,
+                    ataqueBonus: katanaDiv.querySelector('.ataque-bonus').value,
+                    durabilidadeMax: katanaDiv.querySelector('.durabilidade-max').value,
+                    durabilidadeAtual: katanaDiv.querySelector('.durabilidade-atual').value
+                };
+                katanas.push(katana);
+            });
+            localStorage.setItem('katas', JSON.stringify(katanas));
+            alert('Dados salvos com sucesso!');
+        }
+
+        function carregar() {
+            const katanas = JSON.parse(localStorage.getItem('katas'));
+            if (katanas) {
+                document.querySelectorAll('.katana').forEach((katanaDiv, index) => {
+                    if (index < katanas.length) {
+                        const katana = katanas[index];
+                        katanaDiv.querySelector('.katana-name').value = katana.nome;
+                        katanaDiv.querySelector('.katana-raridade').value = katana.raridade;
+                        katanaDiv.querySelector('.katana-minerio').value = katana.minerio;
+                        katanaDiv.querySelector('.ataque-dado').value = katana.ataqueDado;
+                        katanaDiv.querySelector('.ataque-bonus').value = katana.ataqueBonus;
+                        katanaDiv.querySelector('.durabilidade-max').value = katana.durabilidadeMax;
+                        katanaDiv.querySelector('.durabilidade-atual').value = katana.durabilidadeAtual;
+                    }
+                });
+                alert('Dados carregados com sucesso!');
+            } else {
+                alert('Nenhum dado encontrado para carregar.');
+            }
+        }
+
+        function limpar() {
+            if (confirm('Você tem certeza que deseja limpar todos os dados?')) {
+                localStorage.removeItem('katas');
+                document.querySelectorAll('.katana').forEach((katanaDiv) => {
+                    katanaDiv.querySelector('.katana-name').value = '';
+                    katanaDiv.querySelector('.katana-raridade').value = 'comum';
+                    katanaDiv.querySelector('.katana-minerio').value = 'ferro';
+                    katanaDiv.querySelector('.ataque-dado').value = 'd6';
+                    katanaDiv.querySelector('.ataque-bonus').value = '3';
+                    katanaDiv.querySelector('.durabilidade-max').value = '';
+                    katanaDiv.querySelector('.durabilidade-atual').value = '';
+                });
+                alert('Dados limpos com sucesso!');
+            }
+        }
+    </script>
+</body>
+</html>
