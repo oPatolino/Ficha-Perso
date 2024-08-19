@@ -9,62 +9,19 @@
 <body>
     <div class="container">
         <div class="top-button-container">
-            <a href="Katanas.html">
-                <button>Katanas</button>
-            </a>
-            <a href="Elementos.html">
-                <button>Elementos</button>
-            </a>
-            <a href="Habilidades.html">
-                <button>Habilidades</button>
-            </a>
-            <a href="Mochila.html">
-                <button>Mochila</button>
-            </a>
+            <a href="Katanas.html"><button>Katanas</button></a>
+            <a href="Elementos.html"><button>Elementos</button></a>
+            <a href="Habilidades.html"><button>Habilidades</button></a>
+            <a href="Mochila.html"><button>Mochila</button></a>
         </div>
         <h1>Ficha de Personagem</h1>
         <div class="info">
-            <div>
-                <label for="name">Nome:</label>
-                <input type="text" id="name" value="Arthur Pendragon">
-            </div>
-            <div>
-                <label for="race">Raça:</label>
-                <select id="race">
-                    <option value="Humano">Humano</option>
-                    <option value="Elfo">Elfo</option>
-                    <option value="Anão">Anão</option>
-                    <option value="Orc">Orc</option>
-                    <option value="Goblin">Goblin</option>
-                    <option value="Feral">Feral</option>
-                    <option value="Golem">Golem</option>
-                    <option value="Insectoide">Insectoide</option>
-                    <option value="Ciclopes">Ciclopes</option>
-                    <option value="Tritão">Tritão</option>
-                </select>
-            </div>
-            <div>
-                <label for="origin">Origem:</label>
-                <select id="origin">
-                    <option value="Cavaleiro">Cavaleiro</option>
-                    <option value="Mago">Mago</option>
-                    <option value="Ladino">Ladino</option>
-                    <option value="Guerreiro">Guerreiro</option>
-                    <option value="Outro">Outro</option>
-                </select>
-            </div>
-            <div>
-                <label for="coins">Moedas:</label>
-                <input type="number" id="coins" value="1000">
-            </div>
-            <div>
-                <label for="level">Nível:</label>
-                <input type="number" id="level" value="1">
-            </div>
-            <div>
-                <label for="xp">XP:</label>
-                <input type="number" id="xp" value="0">
-            </div>
+            <div><label for="name">Nome:</label><input type="text" id="name" value="Arthur Pendragon"></div>
+            <div><label for="race">Raça:</label><select id="race"><option value="Humano">Humano</option><option value="Elfo">Elfo</option><option value="Anão">Anão</option><option value="Orc">Orc</option><option value="Goblin">Goblin</option><option value="Feral">Feral</option><option value="Golem">Golem</option><option value="Insectoide">Insectoide</option><option value="Ciclopes">Ciclopes</option><option value="Tritão">Tritão</option></select></div>
+            <div><label for="origin">Origem:</label><select id="origin"><option value="Cavaleiro">Cavaleiro</option><option value="Mago">Mago</option><option value="Ladino">Ladino</option><option value="Guerreiro">Guerreiro</option><option value="Outro">Outro</option></select></div>
+            <div><label for="coins">Moedas:</label><input type="number" id="coins" value="1000"></div>
+            <div><label for="level">Nível:</label><input type="number" id="level" value="1"></div>
+            <div><label for="xp">XP:</label><input type="number" id="xp" value="0"></div>
         </div>
         <div class="status">
             <div class="status-block">
@@ -124,7 +81,7 @@
                         </div>
                         <div>
                             <label for="luck-current">SG:</label>
-                            <input type="number" id="luck-current" value="10">
+                            <input type="number" id="luck-current" value="10" readonly>
                         </div>
                     </div>
                 </div>
@@ -170,41 +127,37 @@
             <button onclick="saveData()">Salvar Ficha</button>
             <button onclick="clearData()">Limpar Ficha</button>
         </div>
-    </div>
-
-    <script>
-        // Função para salvar os dados no localStorage
-        function saveData() {
-            const fields = document.querySelectorAll('input, select');
-            fields.forEach(field => {
-                localStorage.setItem(field.id, field.value);
-            });
-        }
-
-        // Função para carregar os dados do localStorage
-        function loadData() {
-            const fields = document.querySelectorAll('input, select');
-            fields.forEach(field => {
-                if (localStorage.getItem(field.id)) {
-                    field.value = localStorage.getItem(field.id);
-                }
-            });
-        }
-
-        // Função para limpar os dados do localStorage e os campos
-        function clearData() {
-            localStorage.clear();
-            const fields = document.querySelectorAll('input, select');
-            fields.forEach(field => {
-                field.value = '';
-            });
-        }
-
-        // Carrega os dados ao iniciar a página
-        window.onload = loadData;
-
-        // Salva os dados ao sair da página
-        window.onbeforeunload = saveData;
-    </script>
-</body>
-</html>
+        <div class="dice-container">
+            <div>
+                <label for="d6-quantity">D6:</label>
+                <input type="number" id="d6-quantity" value="1" min="1">
+                <button onclick="rollDice(6)">Rolar D6</button>
+                <div id="d6-results"></div>
+            </div>
+            <div>
+                <label for="d8-quantity">D8:</label>
+                <input type="number" id="d8-quantity" value="1" min="1">
+                <button onclick="rollDice(8)">Rolar D8</button>
+                <div id="d8-results"></div>
+            </div>
+            <div>
+                <label for="d10-quantity">D10:</label>
+                <input type="number" id="d10-quantity" value="1" min="1">
+                <button onclick="rollDice(10)">Rolar D10</button>
+                <div id="d10-results"></div>
+            </div>
+            <div>
+                <label for="d12-quantity">D12:</label>
+                <input type="number" id="d12-quantity" value="1" min="1">
+                <button onclick="rollDice(12)">Rolar D12</button>
+                <div id="d12-results"></div>
+            </div>
+            <div>
+                <label for="d20-quantity">D20:</label>
+                <input type="number" id="d20-quantity" value="1" min="1">
+                <button onclick="rollDice(20)">Rolar D20</button>
+                <div id="d20-results"></div>
+                <script src="scripts.js"></script>
+            </div>
+        </div>
+    </div
