@@ -62,6 +62,12 @@ body {
     margin-bottom: 10px;
 }
 
+.resultado-ataque {
+    font-weight: bold;
+    color: #007b00; /* Verde para indicar sucesso */
+    margin-left: 10px;
+}
+
 .action-buttons {
     display: flex;
     justify-content: center;
