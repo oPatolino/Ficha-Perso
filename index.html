@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="top-button-container">
-            <a href="Katanas.html"><button>Katanas</button></a>
+            <a href=""><button>Katanas</button></a>
             <a href="Elementos.html"><button>Elementos</button></a>
             <a href="Habilidades.html"><button>Habilidades</button></a>
             <a href="Mochila.html"><button>Mochila</button></a>
@@ -28,32 +28,32 @@
                 <h2>Status Básico</h2>
                 <div class="status-basic">
                     <div class="attributes">
-                        <div>
+                        <div class="attribute-group">
                             <label for="agility-current">Agilidade:</label>
                             <input type="number" id="agility-current" value="10">
-                            <label for="agility-bonus">Bônus:</label>
+                            <label for="agility-bonus"> / </label>
                             <input type="number" id="agility-bonus" value="5">
                         </div>
-                        <div>
+                        <div class="attribute-group">
                             <label for="strength-current">Força:</label>
                             <input type="number" id="strength-current" value="10">
-                            <label for="strength-bonus">Bônus:</label>
+                            <label for="strength-bonus"> / </label>
                             <input type="number" id="strength-bonus" value="5">
                         </div>
-                        <div>
+                        <div class="attribute-group">
                             <label for="intellect-current">Intelecto:</label>
                             <input type="number" id="intellect-current" value="10">
-                            <label for="intellect-bonus">Bônus:</label>
+                            <label for="intellect-bonus"> / </label>
                             <input type="number" id="intellect-bonus" value="5">
                         </div>
-                        <div>
-                            <label for="max-health">Vida:</label>
+                        <div class="attribute-group">
+                            <label for="max-health">Vida Máxima:</label>
                             <input type="number" id="max-health" value="100">
                             <label for="current-health">Atual:</label>
                             <input type="number" id="current-health" value="100">
                         </div>
-                        <div>
-                            <label for="max-stamina">Estamina:</label>
+                        <div class="attribute-group">
+                            <label for="max-stamina">Estamina Máxima:</label>
                             <input type="number" id="max-stamina" value="50">
                             <label for="current-stamina">Atual:</label>
                             <input type="number" id="current-stamina" value="50">
@@ -92,31 +92,31 @@
                     <div>
                         <label for="physical-resistance-current">Resistência Física:</label>
                         <input type="number" id="physical-resistance-current" value="10">
-                        <label for="physical-resistance-bonus">Bônus:</label>
+                        <label for="physical-resistance-bonus"> / </label>
                         <input type="number" id="physical-resistance-bonus" value="5">
                     </div>
                     <div>
                         <label for="magical-resistance-current">Resistência Mágica:</label>
                         <input type="number" id="magical-resistance-current" value="10">
-                        <label for="magical-resistance-bonus">Bônus:</label>
+                        <label for="magical-resistance-bonus"> / </label>
                         <input type="number" id="magical-resistance-bonus" value="5">
                     </div>
                     <div>
                         <label for="physical-efficiency-current">Eficiência Física:</label>
                         <input type="number" id="physical-efficiency-current" value="10">
-                        <label for="physical-efficiency-bonus">Bônus:</label>
+                        <label for="physical-efficiency-bonus"> / </label>
                         <input type="number" id="physical-efficiency-bonus" value="5">
                     </div>
                     <div>
                         <label for="magical-efficiency-current">Eficiência Mágica:</label>
                         <input type="number" id="magical-efficiency-current" value="10">
-                        <label for="magical-efficiency-bonus">Bônus:</label>
+                        <label for="magical-efficiency-bonus"> / </label>
                         <input type="number" id="magical-efficiency-bonus" value="5">
                     </div>
                     <div>
                         <label for="speed-current">Velocidade:</label>
                         <input type="number" id="speed-current" value="10">
-                        <label for="speed-bonus">Bônus:</label>
+                        <label for="speed-bonus"> / </label>
                         <input type="number" id="speed-bonus" value="5">
                     </div>
                 </div>
@@ -157,7 +157,9 @@
                 <input type="number" id="d20-quantity" value="1" min="1">
                 <button onclick="rollDice(20)">Rolar D20</button>
                 <div id="d20-results"></div>
-                <script src="scripts.js"></script>
             </div>
         </div>
-    </div
+        <script src="scripts.js"></script>
+    </div>
+</body>
+</html>
